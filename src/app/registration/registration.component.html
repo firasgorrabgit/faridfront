@@ -1,0 +1,49 @@
+<div class="container">
+    <h1 aligne="center">Créer  un Nouveau compte</h1>
+    <label for="hide" type="hidden">  </label>
+    <div class="register">
+<form #myform="ngForm" (ngSubmit)="createUser(myform)" >
+    
+       
+    <div class="form-group">
+    <label for="providerName"> Name </label>
+    <input ngModel name="name" size="20" type="text" class="form-control" id="providerName" />
+
+</div>
+
+<div class="form-group">
+    <label for="providerName"> LastName </label>
+    <input ngModel name="lname" size="20" type="text" class="form-control" id="providerName" />
+
+</div>
+<div class="form-group">
+<label for="providerEmail">Username(Email)  </label>
+<input ngModel name="email" size="20" type="text" class="form-control" id="providerEmail" />
+
+</div>
+
+<div class="form-group">
+<label for="providerAdress">Passward </label>
+<input ngModel name="passward" size="20" type="password" class="form-control" id="providerAdress" />
+
+</div>
+
+<div class="form-group">
+    <label for="providerAdress">Role </label>
+    <select ngModel name="role" class="form-control">
+        <option value=""> choix votre Role</option>
+        <option value="ADMIN"> ADMIN</option>
+        <option value="SUPERADMIN"> SUPERADMIN</option>
+        <option value="USER"> USER</option>
+    </select>
+   
+    
+    </div>
+
+<button class="btn btn-primary">Ajouter</button>
+
+</form>
+</div>
+</div>
+
+

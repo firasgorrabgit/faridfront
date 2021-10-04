@@ -1,0 +1,39 @@
+<!--nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Providers</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/listProvider" routerLinkActive="active">Liste</a>
+    <a class="nav-item nav-link" routerLink="/addProvider" routerLinkActive="active">Ajouter</a>
+    
+    </div>
+    </div>
+   </nav-->
+   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div *ngIf="loginService.isUserLoggedIn() " align="right" style="background-color: rgb(236, 236, 218); padding-right: 30%;"> You are : {{loginService.sname}} {{loginService.slastname}}  * Connected As : {{loginService.susermail}}</div>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Providers</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+    <a class="nav-item nav-link" routerLink="/listProvider" *ngIf="loginService.isUserLoggedIn()" 
+    routerLinkActive="active">Liste</a>
+
+    <a class="nav-item nav-link" routerLink="/addProvider" *ngIf=" loginService.isUserLoggedIn() && loginService.sroleuser == 'ADMIN' " 
+    routerLinkActive="active">Ajouter</a>
+
+    <a class="nav-item nav-link" routerLink="/login" *ngIf="!loginService.isUserLoggedIn()" 
+    routerLinkActive="active">Login</a>
+
+    <a class="nav-item nav-link" routerLink="/registration" *ngIf="!loginService.isUserLoggedIn()" 
+    routerLinkActive="active">Registration</a>
+
+    <a class="nav-item nav-link" routerLink="/logout" *ngIf="loginService.isUserLoggedIn()" 
+    routerLinkActiv e="active">LogOut</a>
+
+</div>
+</div>
+</nav>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+   <router-outlet></router-outlet>
+   <div *ngIf="loginService.isUserLoggedIn() " align="center" style="background-color: yellow;">you are connected as : {{loginService.sroleuser}}</div>
